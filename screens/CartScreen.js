@@ -51,7 +51,8 @@ const CartScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>
-        My Cart ({cartItems.reduce((t, i) => t + i.quantity, 0)} items)
+        {/* My Cart ({cartItems.reduce((t, i) => t + i.quantity, 0)} items) */}
+        My Cart ({cartItems.length} items)
       </Text>
 
       <FlatList

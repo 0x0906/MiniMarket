@@ -11,67 +11,18 @@ import React, { useState, useRef } from "react";
 import CardCom from "../components/CardCom";
 
 const data = [
-  {
-    name: "Tomato",
-    price: 38,
-    imageUrl:
-      "https://unsplash.com/photos/g4wzhY8qiMw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4Mjc2fA&force=true",
-  },
-  {
-    name: "Potato",
-    price: 32,
-    imageUrl:
-      "https://unsplash.com/photos/B0s3Xndk6tw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM3MDE0fA&force=true",
-  },
-  {
-    name: "Onion",
-    price: 45,
-    imageUrl:
-      "https://unsplash.com/photos/pmS8XSz5NU0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTB8fE9uaW9ufGVufDB8fHx8MTc2MTIzODY4M3ww&force=true",
-  },
-  {
-    name: "Carrot",
-    price: 60,
-    imageUrl:
-      "https://unsplash.com/photos/IZq1FV87qpM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8Q2Fycm90fGVufDB8fHx8MTc2MTIzODcxMnww&force=true",
-  },
-  {
-    name: "Cabbage",
-    price: 28,
-    imageUrl:
-      "https://unsplash.com/photos/gofXEm3c_Ho/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8N3x8Q2FiYmFnZXxlbnwwfHx8fDE3NjEyMzg3Mzl8MA&force=true",
-  },
-  {
-    name: "Cauliflower",
-    price: 55,
-    imageUrl:
-      "https://unsplash.com/photos/hnEp8wnCj4g/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4NzU5fA&force=true",
-  },
-  {
-    name: "Pumpkin",
-    price: 42,
-    imageUrl:
-      "https://unsplash.com/photos/Nu4u9g7Sgdw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4Nzg1fA&force=true",
-  },
-  {
-    name: "Beetroot",
-    price: 48,
-    imageUrl:
-      "https://unsplash.com/photos/udo5pIvRfrA/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8QmVldHJvb3R8ZW58MHx8fHwxNzYxMjM4ODA0fDA&force=true",
-  },
-  {
-    name: "Capsicum",
-    price: 65,
-    imageUrl:
-      "https://unsplash.com/photos/gpP-OkJ5BbI/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4ODM0fA&force=true",
-  },
-  {
-    name: "Coriander Leaves",
-    price: 20,
-    imageUrl:
-      "https://unsplash.com/photos/9rt6gV_IjhA/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Q29yaWFuZGVyJTIwTGVhdmVzfGVufDB8fHx8MTc2MTIzODg1N3ww&force=true",
-  },
+  { name: "Tomato - 3kg", price: 90, imageUrl: "https://unsplash.com/photos/g4wzhY8qiMw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4Mjc2fA&force=true" },
+  { name: "Potato - 2kg", price: 29.64, imageUrl: "https://unsplash.com/photos/B0s3Xndk6tw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM3MDE0fA&force=true" },
+  { name: "Onion - 5kg", price: 85.5, imageUrl: "https://unsplash.com/photos/pmS8XSz5NU0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTB8fE9uaW9ufGVufDB8fHx8MTc2MTIzODY4M3ww&force=true" },
+  { name: "Carrot - 4kg", price: 280, imageUrl: "https://unsplash.com/photos/IZq1FV87qpM/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8Q2Fycm90fGVufDB8fHx8MTc2MTIzODcxMnww&force=true" },
+  { name: "Cabbage - 3kg", price: 75.3, imageUrl: "https://unsplash.com/photos/gofXEm3c_Ho/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8N3x8Q2FiYmFnZXxlbnwwfHx8fDE3NjEyMzg3Mzl8MA&force=true" },
+  { name: "Cauliflower - 2kg", price: 76.6, imageUrl: "https://unsplash.com/photos/hnEp8wnCj4g/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4NzU5fA&force=true" },
+  { name: "Pumpkin - 5kg", price: 107.95, imageUrl: "https://unsplash.com/photos/Nu4u9g7Sgdw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4Nzg1fA&force=true" },
+  { name: "Beetroot - 3kg", price: 133.23, imageUrl: "https://unsplash.com/photos/udo5pIvRfrA/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8OHx8QmVldHJvb3R8ZW58MHx8fHwxNzYxMjM4ODA0fDA&force=true" },
+  { name: "Capsicum - 4kg", price: 260, imageUrl: "https://unsplash.com/photos/gpP-OkJ5BbI/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYxMjM4ODM0fA&force=true" },
+  { name: "Coriander Leaves - 1kg", price: 20, imageUrl: "https://unsplash.com/photos/9rt6gV_IjhA/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Q29yaWFuZGVyJTIwTGVhdmVzfGVufDB8fHx8MTc2MTIzODg1N3ww&force=true" }
 ];
+
 export default function DashboardScreen({}) {
   const [searchText, setSearchText] = useState("");
   const [filteredData, setFilteredData] = useState(data);
@@ -97,6 +48,7 @@ export default function DashboardScreen({}) {
           ref={searchInputRef}
           style={styles.searchbar}
           placeholder="Search your item here..."
+          placeholderTextColor={"#000"}
           value={searchText}
           cursorHidden={true} 
           caretHidden={false} 
@@ -140,6 +92,7 @@ const styles = StyleSheet.create({
     width: "94.5%",
     justifyContent: "center",
     alignItems: "center",
+    color: "#000",
     gap: 10,
   },
   searchbar: {
